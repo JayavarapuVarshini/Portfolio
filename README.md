@@ -1,4 +1,4 @@
-# Personal Developer Portfolio — Varshini Jayavarapu
+# Portfolio — Varshini Jayavarapu
 
 A clean, production-ready developer portfolio website built with **React and Vite**. Designed with a deep navy and near-black background, restrained lavender and violet accents, thoughtful typography, and smooth CSS animations.
 
