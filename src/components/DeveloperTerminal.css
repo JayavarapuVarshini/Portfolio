@@ -1,0 +1,480 @@
+/* ==========================================================================
+   DEVELOPER TERMINAL COMPONENT STYLES
+   ========================================================================== */
+
+.terminal-section {
+  background-color: var(--bg-main);
+  padding: 6.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Terminal Outer Window Frame
+   👉 NOTE: To adjust the width of this terminal box, change `max-width` below: */
+.terminal-window {
+  width: 100%;
+  max-width: 1050px; /* Adjust this value anytime (e.g., 960px, 1050px, 1150px) */
+  margin-inline: auto;
+  background: #060913;
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  border-radius: var(--radius-md);
+  box-shadow: 
+    0 16px 45px -10px rgba(0, 0, 0, 0.75),
+    0 0 35px rgba(139, 92, 246, 0.12);
+  overflow: hidden;
+  cursor: text;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.terminal-window:focus-within,
+.terminal-window:hover {
+  border-color: rgba(167, 139, 250, 0.45);
+  box-shadow: 
+    0 20px 50px -10px rgba(0, 0, 0, 0.85),
+    0 0 45px rgba(139, 92, 246, 0.2);
+}
+
+/* Window Titlebar */
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.4rem;
+  background: rgba(14, 20, 36, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  user-select: none;
+}
+
+.terminal-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.term-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-close {
+  background-color: #ef4444;
+}
+
+.dot-minimize {
+  background-color: #f59e0b;
+}
+
+.dot-maximize {
+  background-color: #10b981;
+}
+
+.terminal-title-text {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.terminal-actions-right {
+  display: flex;
+  align-items: center;
+}
+
+.term-clear-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.term-clear-btn:hover {
+  color: var(--accent-lavender);
+  border-color: var(--border-lavender);
+  background: rgba(196, 181, 253, 0.06);
+}
+
+/* Terminal Body Screen - Normal top-to-bottom layout */
+.terminal-body {
+  padding: 1.4rem 1.75rem;
+  min-height: 280px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Terminal Welcome Message - Top-left aligned */
+.term-welcome-msg {
+  color: var(--text-muted);
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.term-system-line {
+  color: var(--accent-lavender-light);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.term-hint-line {
+  color: var(--text-secondary);
+}
+
+.term-cmd-highlight {
+  color: var(--accent-lavender);
+  font-weight: 600;
+}
+
+/* Active Command Prompt Line - Top-left aligned immediately beneath welcome message */
+.term-active-line {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.85rem 0;
+  padding: 0;
+}
+
+.term-prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: 600;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.term-user {
+  color: var(--accent-lavender);
+}
+
+.term-colon {
+  color: var(--text-muted);
+}
+
+.term-path {
+  color: #38bdf8;
+}
+
+.term-dollar {
+  color: #a78bfa;
+  margin-left: 1px;
+}
+
+.term-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.terminal-real-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  padding: 0;
+  caret-color: var(--accent-lavender);
+}
+
+/* Command History & Output Area - Renders beneath the input */
+.term-history-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-height: 420px;
+  overflow-y: auto;
+  margin-top: 0.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-right: 0.5rem;
+}
+
+/* Custom Scrollbar for Terminal Output Area */
+.term-history-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.term-history-area::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.term-history-area::-webkit-scrollbar-thumb {
+  background: rgba(196, 181, 253, 0.2);
+  border-radius: var(--radius-pill);
+}
+
+.term-history-area::-webkit-scrollbar-thumb:hover {
+  background: rgba(196, 181, 253, 0.4);
+}
+
+/* Command Entry Echo */
+.term-command-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.term-input-echo {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Output Wrapper */
+.term-output-wrapper {
+  margin-left: 0.2rem;
+  color: var(--text-secondary);
+}
+
+.term-output-wrapper.is-error {
+  color: #f87171;
+}
+
+.term-output-title {
+  color: var(--accent-lavender-light);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+/* Help Output */
+.term-help-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+
+.term-help-item {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.term-cmd-name {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* About Output */
+.term-about-output {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.term-bold-name {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.1rem;
+}
+
+.term-text-line {
+  color: var(--text-secondary);
+}
+
+/* Skills Output */
+.term-tree-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.term-tree-list li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--text-secondary);
+}
+
+.term-tree-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-lavender);
+}
+
+.term-branch-cat {
+  color: var(--accent-lavender-light);
+  font-weight: 600;
+}
+
+/* Projects Output */
+.term-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.term-project-block {
+  padding: 0.45rem 0.65rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--accent-lavender);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.term-proj-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.term-proj-idx {
+  color: var(--accent-lavender);
+  font-weight: 600;
+}
+
+.term-proj-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.term-status-tag {
+  font-size: 0.72rem;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.term-proj-detail {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.term-detail-key {
+  color: var(--text-muted);
+}
+
+/* Contact Output */
+.term-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
+}
+
+.term-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.term-contact-label {
+  color: var(--accent-lavender-light);
+  font-weight: 600;
+  min-width: 68px;
+}
+
+.term-link {
+  color: #38bdf8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.term-link:hover {
+  color: #7dd3fc;
+}
+
+.term-not-configured {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Error Output */
+.term-invalid-cmd {
+  color: #fca5a5;
+  font-weight: 600;
+}
+
+.term-inline-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #38bdf8;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Quick Command Chips Below Terminal */
+.terminal-shortcuts-row {
+  width: 100%;
+  max-width: 1050px;
+  margin-inline: auto;
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.shortcuts-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+}
+
+.term-shortcut-chip {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(196, 181, 253, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.65rem;
+  cursor: pointer;
+  color: var(--accent-lavender);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  transition: all var(--transition-fast);
+}
+
+.term-shortcut-chip:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(167, 139, 250, 0.45);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .terminal-section .container {
+    padding: 0 1.25rem;
+  }
+  .terminal-body {
+    font-size: 0.82rem;
+    padding: 1.15rem 1.25rem;
+    min-height: 250px;
+  }
+  .term-help-item {
+    grid-template-columns: 80px 1fr;
+    gap: 0.5rem;
+  }
+  .term-prompt {
+    font-size: 0.8rem;
+  }
+}
