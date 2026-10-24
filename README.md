@@ -4,27 +4,6 @@ A clean, production-ready developer portfolio website built with **React and Vit
 
 ---
 
-## 🌟 Highlights
-
-- **Identity**: Exact name order (**Varshini Jayavarapu**) and **VJ** header monogram logo.
-- **Hero Screen**:
-  - Smooth typing animation cycling through:
-    - *Full Stack Developer*
-    - *Data Science Enthusiast*
-    - *AI & ML Explorer*
-    - *Problem Solver*
-  - Stylized illustrated vector developer with laptop and subtle orbital paths.
-  - Four independently floating focus words: **BUILD**, **ANALYZE**, **CREATE**, **SOLVE**.
-  - Scroll down indicator linking to the About section.
-- **About**: Authentic, student-appropriate narrative highlighting B.Tech CSE background, practical software building, and data/AI exploration.
-- **Skills**: Categorized toolkit (Programming, Web Development, Databases, Tools & Technologies, Additional Interests) presented in clean, scannable badges.
-- **Featured Projects**:
-  - **Handloom Web Application** (Team Lead, In Development)
-  - **Global Loom Collective** (In Development)
-- **Contact**: Direct channels (Email with 1-click copy, LinkedIn, GitHub) and a clean message composer.
-
----
-
 ## 📁 Project Structure
 
 ```text
